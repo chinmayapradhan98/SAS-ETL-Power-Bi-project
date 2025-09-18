@@ -70,8 +70,7 @@ PROC SQL;
     ORDER BY date_key;
 QUIT;
 
-* Create other Dimension Tables (as before);
-
+**Create dim_customers
 
 PROC SQL;
     CREATE TABLE work.dim_customers AS
@@ -81,7 +80,7 @@ PROC SQL;
         age
     FROM work.cleaned_sales
     WHERE NOT MISSING(Customer_id);
-    
+**Create dim_products
     CREATE TABLE work.dim_products AS
     SELECT DISTINCT
         Product_Category AS product_key,
