@@ -1,7 +1,7 @@
 
 %Macro ETL_Project;
 
-PROC IMPORT OUT=work.sales DATAFILE="/home/u61627519/Udemy_practice/Udemy_prac/retail_sales_dataset.csv" DBMS=CSV REPLACE;
+PROC IMPORT datafile=work.sales  out="/home/u61627519/Udemy_practice/Udemy_prac/retail_sales_dataset.csv" DBMS=CSV REPLACE;
 run;
 
 PROC PRINT DATA=work.sales (OBS=10);
